@@ -6,7 +6,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
-@import url('http://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 html,body,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,cite,code,del,dfn,em,font,img,ins,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,ul,ol,li,dl,dt,dd,table,caption,tbody,tfoot,thead,tr,th,td,fieldset,fo7m,label,legend,input,button,textarea,select{margin:0;padding:0}
 header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block;margin:0;padding:0}
 legend{display:block;overflow:hidden;position:absolute;width:1px;height:1px;font-size:1px;line-height:0;text-indent:-999em;white-space:nowrap; }
