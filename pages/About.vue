@@ -18,7 +18,8 @@
                 <span class="not-desc"><strong>시도우</strong> / 2011.06 ~ 2012.10</span><br>
                 <span class="not-desc"><strong>비스톤스</strong> / 2012.11 ~ 2013.05</span><br>
                 <span class="not-desc"><strong>판도라티비</strong> / 2013.05 ~ 2016.08</span><br>
-                <strong>리젠컴퍼니</strong> / 2016.08 ~ 2017.03
+                <span class="not-desc"><strong>리젠컴퍼니</strong> / 2016.08 ~ 2017.03</span><br>
+                <strong>커머스랩</strong> / 2017.07 ~ 
               </span>
             </li>
           </ul>
@@ -41,7 +42,7 @@ export default {
     }
   },
   mounted () {
-    document.querySelector('.gnb_area').childNodes[2].className = this.isActive
+    return document.querySelector('.gnb_area').childNodes[2].className = this.isActive
   }
 }
 </script>

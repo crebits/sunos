@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted () {
-    document.querySelector('.gnb_area').childNodes[3].className = this.isActive
+    return document.querySelector('.gnb_area').childNodes[3].className = this.isActive
   }
 }
 </script>
