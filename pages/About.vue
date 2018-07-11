@@ -2,7 +2,7 @@
     <div>
         <gnbs></gnbs>
         
-        <div id="profile" class="section section_3" style="display: block; position: relative; float: none; background-position: 50% 20px;">
+        <div id="profile">
         <h2 class="title">About Me</h2>	
     
         <div class="content">
