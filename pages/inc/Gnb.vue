@@ -1,11 +1,11 @@
 <template>
-    <div class="gnb">
+    <transition class="gnb" name="test">
         <ul class="gnb_area">
-            <li v-for='(list, index) in linklist' :key='index'>
+            <li v-for='(list, index) in linklist' :key='index' v-on:click='gnbClick(index)'>
                 <router-link :to='list.link'>{{ list.content }}</router-link>
             </li>
         </ul>
-	</div>
+	</transition>
 </template>
 
 <script>
@@ -13,6 +13,7 @@ export default {
     name : "gnb",
     data () {
         return {
+	          isActive : "active",
             linklist : [
                 {content: 'HOME', link: '/'},
                 {content: 'Portfolio', link: '/portfolio'},
@@ -20,7 +21,21 @@ export default {
                 {content: 'Contact', link: '/contact'}
             ]
         }
-    } 
+    },  
+    transition: {
+        name: 'test',
+        mode: 'out-in'
+    },
+    methods: {
+      gnbClick: function(idx){
+         var gnb = document.querySelector('.gnb_area');
+         for(let i = 0; gnb.childNodes.length>i; i++){
+           gnb.childNodes[i].className = ""
+         }
+         
+         gnb.childNodes[idx].className = this.isActive
+      }
+    }
 }
 </script>
 
@@ -36,5 +51,22 @@ export default {
 	.gnb ul { overflow:hidden; }
 	.gnb ul li { float:left; width:25%; text-align:center; line-height:30px; }
 	.gnb ul li a {padding:0}
+}
+.page-enter-active {
+  animation: bounce-in .5s;
+}
+.page-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

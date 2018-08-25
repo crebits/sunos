@@ -30,4 +30,6 @@ h2.title{font-family:'Varela Round', sans-serif;color: #fff;font-size: 42px;line
 	h2.title{font-size: 26px;line-height: 27px;margin: 0 0 25px 0}
 	.content{margin:0;overflow: inherit;}
 }
+
 </style>
+
