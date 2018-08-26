@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style>
-#project{width:80%;margin:0 auto;}
+#project{width:90%;margin:0 auto;}
 .project_list { overflow:hidden;}
 .project_list .list { float:left; width:25%;height:300px; margin-left:-1px; transition:all 0.5s ease;position: relative;overflow: hidden;}
 .project_list .list .thum { margin:0;overflow:hidden; }
