@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style>
-.gnb { width:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0.6);z-index:999999; }
+.gnb_area { width:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0.6);z-index:999999; }
 .gnb_area{text-align:center;padding:10px 0;}
 .gnb_area li{display:inline-block;position:relative;}
 .gnb_area li a { display:block;padding:10px 30px;color:#fff;font-size:16px;}
@@ -48,9 +48,9 @@ export default {
 .gnb_area li.active a:before {-webkit-transform: scale3d(1, 1, 1);transform:scale3d(1, 1, 1);height:1px;}
 
 @media all and (max-width:768px) {
-	.gnb ul { overflow:hidden; }
-	.gnb ul li { float:left; width:25%; text-align:center; line-height:30px; }
-	.gnb ul li a {padding:0}
+	.gnb_area { overflow:hidden; }
+	.gnb_area li { float:left; width:25%; text-align:center; line-height:30px; }
+	.gnb_area li a {padding:0}
 }
 .page-enter-active {
   animation: bounce-in .5s;
