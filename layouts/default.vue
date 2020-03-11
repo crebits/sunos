@@ -1,7 +1,5 @@
 <template>
-  <div>
     <nuxt/>
-  </div>
 </template>
 
 <style>
@@ -22,12 +20,14 @@ body{position:relative;font-size:12px;font-family:'돋움',Dotum,Tahoma,Verdana,
 a { text-decoration:none; color:#666}
 
 body { background:#000;margin:0;}
-h2.title{font-family:'Varela Round', sans-serif;color: #fff;font-size: 42px;line-height: 43px;margin: 0 0 70px 30px;}
-.content{position:relative;height:100%;margin:0 30px; transform: skewY(-7deg);-moz-transform: skewY(-7deg);-ms-transform: skewY(-7deg);-webkit-transform: skewY(-7deg);transform-origin: 0 0;overflow: hidden;}
-#project, #profile, #order{padding-top:150px;}
+h2.title{font-family:'Varela Round', sans-serif;color: #fff;font-size: 42px;line-height: 43px;margin-bottom: 30px;}
+.content{position:relative;height:100%;margin:0 30px; 
+/* transform: skewY(-7deg);-moz-transform: skewY(-7deg);-ms-transform: skewY(-7deg);-webkit-transform: skewY(-7deg);transform-origin: 0 0; */
+overflow: hidden;width:100%;margin: auto;}
+#project, #profile, #order{padding-top:100px;max-width:1200px;margin:0 auto;}
 
 @media (max-width:768px) {
-	h2.title{font-size: 26px;line-height: 27px;margin: 0 0 25px 0}
+	h2.title{font-size: 26px;line-height: 27px;margin: 0 0 20px 5%}
 	.content{margin:0;overflow: inherit;}
 }
 

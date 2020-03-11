@@ -18,8 +18,9 @@ export default {
                 {content: 'HOME', link: '/'},
                 {content: 'Portfolio', link: '/portfolio'},
                 {content: 'About Me', link: '/about'},
-                {content: 'Contact', link: '/contact'}
-            ]
+                // {content: 'Contact', link: '/contact'}
+            ],
+            title: this.$route.name
         }
     },  
     transition: {
@@ -40,16 +41,14 @@ export default {
 </script>
 
 <style>
-.gnb_area { width:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0.6);z-index:999999; }
-.gnb_area{text-align:center;padding:10px 0;}
+.gnb_area { width:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0.6);z-index:999999;text-align:center;padding:10px 0;}
 .gnb_area li{display:inline-block;position:relative;}
 .gnb_area li a { display:block;padding:10px 30px;color:#fff;font-size:16px;}
 .gnb_area li a:before {content:'';position:absolute;bottom:0;left:0;width:100%;height:0;background:#fff;-webkit-transition:-webkit-transform 0.7s;transition:transform 0.7s;-webkit-transform:scale3d(0, 1, 1);transform: scale3d(0, 1, 1);}
 .gnb_area li.active a:before {-webkit-transform: scale3d(1, 1, 1);transform:scale3d(1, 1, 1);height:1px;}
 
 @media all and (max-width:768px) {
-	.gnb_area { overflow:hidden; }
-	.gnb_area li { float:left; width:25%; text-align:center; line-height:30px; }
+	.gnb_area li { width:25%; text-align:center; line-height:30px; }
 	.gnb_area li a {padding:0}
 }
 .page-enter-active {
