@@ -122,7 +122,7 @@ transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotate
 }
 .project_list .list .txt { color:#000;text-align:left; width: calc(100% - 30px);padding:0 15px;}
 .project_list .list .txt.pro {font-size:20px;margin-bottom:5px;font-weight: bold;}
-.project_list .list .txt.op {font-size:14px;opacity: .6;}
+.project_list .list .txt.op {font-size:14px;opacity: .6;line-height: 18px;margin-bottom: 3px;}
 .project_list .list .txt.date {font-size:12px;opacity: .6;margin-top:40px;}
 .project_list .list .skill{position: absolute;right: 15px;bottom: 20px;}
 .project_list .list .skill img{height: 30px;margin: 0 3px;}
