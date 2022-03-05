@@ -2,6 +2,22 @@
     <nuxt/>
 </template>
 
+<script>
+export default {
+	name: 'Default',
+	data () {
+		return {
+			first : false
+		}
+	},
+	mounted () {
+		const homeArea = document.querySelector('.home-area');
+		homeArea.classList.add('ani');
+		setTimeout(()=> homeArea.classList.remove('ani'), 6000)
+	}
+}
+</script>
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
@@ -68,7 +84,7 @@ textarea,
 select {
 	margin:0;
 	padding:0;
-
+	box-sizing: border-box;
 }
 
 header,
@@ -187,7 +203,7 @@ h2.title {
 	margin: auto;
 }
 
-#project, #profile, #order {
+#project, .profile, #order {
 	padding-top:100px;
 	max-width:1200px;
 	margin:0 auto;

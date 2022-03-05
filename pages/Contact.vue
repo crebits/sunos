@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Gnbs from "./inc/Gnb.vue"
+import Gnbs from "../components/Gnb.vue"
 
 export default {
     name: 'Contact',

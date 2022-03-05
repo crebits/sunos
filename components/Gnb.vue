@@ -1,7 +1,7 @@
 <template>
   <transition name="test" mode="out-in">
     <ul class="gnb-area">
-        <li v-for='(list, index) in linklist' :key='index' @click='gnbClick(index)'>
+        <li v-for='(list, index) in linklist' :key='index' :class='list.class' @click='gnbClick(index)'>
             <router-link :to='list.link'>{{ list.content }}</router-link>
         </li>
     </ul>
@@ -11,26 +11,32 @@
 <script>
 export default {
   name : "Gnb",
-  data () {
+  data() {
       return {
           isActive : "active",
           linklist : [
-              {content: 'HOME', link: '/'},
-              {content: 'Portfolio', link: '/portfolio'},
-              {content: 'About Me', link: '/about'},
+              {content: 'HOME', link: '/', class: 'home'},
+              {content: 'Portfolio', link: '/portfolio', class: 'portfolio'},
+              // {content: 'About Me', link: '/about'},
               // {content: 'Contact', link: '/contact'}
           ],
-          title: this.$route.name
+          first: true
       }
+  },
+  mounted() {
+    const home = document.querySelector('.home');
+    const port = document.querySelector('.portfolio');
+    const path = this.$route.path;
+    path === "/" ? home.classList.add(this.isActive) : port.classList.add(this.isActive);
   },
   methods: {
     gnbClick(idx) {
         const gnb = document.querySelector('.gnb-area');
         for(let i = 0; gnb.children.length>i; i++){
-          gnb.children[i].className = ""
+          gnb.children[i].classList.remove(this.isActive)
         }
         
-        gnb.children[idx].className = this.isActive
+        gnb.children[idx].classList.add(this.isActive)
     }
   },
   transition: {

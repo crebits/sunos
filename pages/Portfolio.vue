@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Gnbs from './inc/Gnb.vue'
+import Gnbs from '../components/Gnb.vue'
 
 export default {
   name : "Portfolio",
@@ -76,7 +76,7 @@ export default {
     }
   },
   mounted () {
-	document.querySelector('.gnb-area').childNodes[1].className = this.isActive
+	// document.querySelector('.gnb-area').childNodes[1].className = this.isActive
   },
   methods: {
 	flip: (idx) => {
