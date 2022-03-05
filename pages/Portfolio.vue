@@ -97,6 +97,7 @@ export default {
 	grid-template-columns: repeat(auto-fill, minmax(240px, 240px));
     grid-gap: 14px;
 	justify-content: center;
+	padding-bottom: 100px;
 }
 
 .project-list .list {
