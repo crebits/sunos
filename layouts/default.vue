@@ -12,7 +12,7 @@ export default {
 	},
 	mounted () {
 		const homeArea = document.querySelector('.home-area');
-		homeArea.classList.add('ani');
+		homeArea?.classList?.add('ani');
 		setTimeout(()=> homeArea.classList.remove('ani'), 6000)
 	}
 }

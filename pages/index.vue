@@ -24,7 +24,7 @@
                 React, React Native, Vue<br/>
                 Node.js<br/>
                 HTML, CSS<br/>
-                Amazon Web Services<br/>
+                <!-- Amazon Web Services<br/> -->
                 Sketch, Zeplin, Photoshop
               </span>
             </li>
@@ -51,14 +51,6 @@ import Gnbs from '../components/Gnb.vue'
 export default {
   components: {
     Gnbs
-  },
-  data () {
-    return {
-      isActive: 'active'
-    }
-  },
-  mounted () {
-    // document.querySelector('.gnb-area').children[0].className = this.isActive
   },
 }
 </script>
