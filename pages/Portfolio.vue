@@ -11,7 +11,7 @@
 					<li v-for='(port, index) in portList' :key='index' class="list" @click='flip(index)'>
 						<div v-if="port.img" :class='{shadow : port.img}'>
 							<div class="thum">
-								<img :src='port.img'/>
+								<img :src='urlPath + port.img'/>
 								<div class="gradient top"></div>
 								<div class="gradient bottom"></div>
 							</div>
@@ -21,7 +21,7 @@
 								<!-- <p class="op txt">- {{port.option}} 프로젝트</p> -->
 								<p v-for='(scription, idx) in port.scription' :key='idx' class="op txt">- {{scription}}</p>
 								<div class="skill">
-									<img v-for='(skill, i) in port.skill' :key='i' :src='"img/logo/" + skill + ".png"' :alt='skill' >
+									<img v-for='(skill, i) in port.skill' :key='i' :src='`${urlPath}/img/logo/${skill}.png`' :alt='skill' >
 								</div>
 							</div>
 						</div>
@@ -43,32 +43,33 @@ export default {
   },
   data () {
     return {
+	  urlPath: 'https://sunos.netlify.app',
 	  portList : [
-		  {img : 'https://sunos.netlify.app/img/28_s.jpg', project : 'NS홈쇼핑', scription: ["개발 업무: 요구사항 요건 정리 / 리딩 및 개발", "운영 업무: 장애 발생 대응 및 버그 수정", "매니저 업무: 업무 우선순위 협의 및 협력업체 업무 요청 및 진행사항 확인"], date : '2020-07 ~ ', skill: ["vue", "scss", "html", "js"]},
-		  {img : 'https://sunos.netlify.app/img/27_s.jpg', project : '덕후생활', scription: ["취향 선택 기능 개발", "친구맺기(follow / following) 개발", "마이페이지 개발", "웹뷰 페이지 제작 및 연동", "전체 레이아웃 및 애니매이션 개발"], date : '2019-05 ~ 2020-05', skill: ["react", "html", "css", "js"]},
-		  {img : 'https://sunos.netlify.app/img/26_s.jpg', project : 'OBIDO', scription: ["계기판 서비스 연동", "팟캐스트 서비스 연동", "날씨 서비스 연동", "주문 서비스 연동", "전체 UI 개발"], date : '2019-11 ~ 2020-01', skill: ["vue", "scss", "html", "js"]},
-		  {img : 'https://sunos.netlify.app/img/25_s.jpg', project : 'KwaveStar', scription: ["react native Web View 페이지 랜딩", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2018-10 ~ 2020-05', skill: ["html", "css", "js", "jquery", "react"]},
-		  {img : 'https://sunos.netlify.app/img/24_s.jpg', project : '싱크커머스 cms', scription: ["클라이언트 데이터 연동", "UI 개발"], date : '2018-04 ~ 2018-07', skill: ["vue", "html", "css", "js",]},
-		  {img : 'https://sunos.netlify.app/img/23_s.jpg', project : 'SPC', scription: ["클라이언트 데이터 연동", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2017-07 ~ 2018-09', skill: ["html", "css", "js"]},
-		  {img : 'https://sunos.netlify.app/img/22_s.jpg', project : 'LG전자', scription: ["IE7 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2016-08 ~ 2017-03', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/21_s.jpg', project : '판도라티비', scription: ["IE6 크로스브라우징", "클라이언트 데이터 연동", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-05 ~ 2016-07', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/20_s.jpg', project : '코리아탑백', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2016-03 ~ 2016-07', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/19_s.jpg', project : '그리드인코딩', scription: ["데이터 시각화", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2015-10 ~ 2016-02', skill: ["html", "css", "js", "d3"]},
-		  {img : 'https://sunos.netlify.app/img/18_s.jpg', project : '아이앱', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2014-05 ~ 2015-02', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/17_s.jpg', project : 'KMPlayer', scription: ["IE5 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-05 ~ 2016-07', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/16_s.jpg', project : '판도라 게임 TV', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-10 ~ 2013-12', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/15_s.jpg', project : '젤리팟', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-06 ~ 2013-10', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/12_s.png', project : '신한카드', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2013-03 ~ 2013-05', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/10_s.png', project : '삼성카드', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2013-01 ~ 2013-02', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/09_s.jpg', project : 'Cj채용', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2012-11 ~ 2013-12', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/07_s.jpg', project : 'T world shop', scription: ["IE6 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2012-09 ~ 2012-10', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/08_s.jpg', project : '롯데리조트', scription: ["IE6 크로스브라우징", "사용자 인터랙션 개발"], date : '2012-07 ~ 2012-08', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/06_s.jpg', project : '오케이아웃도어', scription: ["IE6 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2012-01 ~ 2012-06', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/05_s.jpg', project : '대우증권', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2011-09 ~ 2011-12', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/04_s.jpg', project : '교육학술정보원', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2011-06 ~ 2011-08', skill: ["html", "css", "js", "jquery"]},
-		  {img : 'https://sunos.netlify.app/img/03_s.jpg', project : '금융감독원', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2011-01 ~ 2011-03', skill: ["html", "css", "js"]},
-		  {img : 'https://sunos.netlify.app/img/02_s.jpg', project : '조달청', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2010-10 ~ 2010-12', skill: ["html", "css", "js"]},
-		  {img : 'https://sunos.netlify.app/img/01_s.jpg', project : '국립공원관리공단', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2010-06 ~ 2010-09', skill: ["html", "css", "js"]}
+		  {img : '/img/28_s.jpg', project : 'NS홈쇼핑', scription: ["개발 업무: 요구사항 요건 정리 / 리딩 및 개발", "운영 업무: 장애 발생 대응 및 버그 수정", "매니저 업무: 업무 우선순위 협의 및 협력업체 업무 요청 및 진행사항 확인"], date : '2020-07 ~ ', skill: ["vue", "scss", "html", "js"]},
+		  {img : '/img/27_s.jpg', project : '덕후생활', scription: ["취향 선택 기능 개발", "친구맺기(follow / following) 개발", "마이페이지 개발", "웹뷰 페이지 제작 및 연동", "전체 레이아웃 및 애니매이션 개발"], date : '2019-05 ~ 2020-05', skill: ["react", "html", "css", "js"]},
+		  {img : '/img/26_s.jpg', project : 'OBIDO', scription: ["계기판 서비스 연동", "팟캐스트 서비스 연동", "날씨 서비스 연동", "주문 서비스 연동", "전체 UI 개발"], date : '2019-11 ~ 2020-01', skill: ["vue", "scss", "html", "js"]},
+		  {img : '/img/25_s.jpg', project : 'KwaveStar', scription: ["react native Web View 페이지 랜딩", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2018-10 ~ 2020-05', skill: ["html", "css", "js", "jquery", "react"]},
+		  {img : '/img/24_s.jpg', project : '싱크커머스 cms', scription: ["클라이언트 데이터 연동", "UI 개발"], date : '2018-04 ~ 2018-07', skill: ["vue", "html", "css", "js",]},
+		  {img : '/img/23_s.jpg', project : 'SPC', scription: ["클라이언트 데이터 연동", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2017-07 ~ 2018-09', skill: ["html", "css", "js"]},
+		  {img : '/img/22_s.jpg', project : 'LG전자', scription: ["IE7 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2016-08 ~ 2017-03', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/21_s.jpg', project : '판도라티비', scription: ["IE6 크로스브라우징", "클라이언트 데이터 연동", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-05 ~ 2016-07', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/20_s.jpg', project : '코리아탑백', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2016-03 ~ 2016-07', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/19_s.jpg', project : '그리드인코딩', scription: ["데이터 시각화", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2015-10 ~ 2016-02', skill: ["html", "css", "js", "d3"]},
+		  {img : '/img/18_s.jpg', project : '아이앱', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2014-05 ~ 2015-02', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/17_s.jpg', project : 'KMPlayer', scription: ["IE5 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-05 ~ 2016-07', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/16_s.jpg', project : '판도라 게임 TV', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-10 ~ 2013-12', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/15_s.jpg', project : '젤리팟', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2013-06 ~ 2013-10', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/12_s.png', project : '신한카드', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2013-03 ~ 2013-05', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/10_s.png', project : '삼성카드', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2013-01 ~ 2013-02', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/09_s.jpg', project : 'Cj채용', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2012-11 ~ 2013-12', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/07_s.jpg', project : 'T world shop', scription: ["IE6 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2012-09 ~ 2012-10', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/08_s.jpg', project : '롯데리조트', scription: ["IE6 크로스브라우징", "사용자 인터랙션 개발"], date : '2012-07 ~ 2012-08', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/06_s.jpg', project : '오케이아웃도어', scription: ["IE6 크로스브라우징", "반응형 UI 개발", "사용자 인터랙션 개발"], date : '2012-01 ~ 2012-06', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/05_s.jpg', project : '대우증권', scription: ["반응형 UI 개발", "사용자 인터랙션 개발"], date : '2011-09 ~ 2011-12', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/04_s.jpg', project : '교육학술정보원', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2011-06 ~ 2011-08', skill: ["html", "css", "js", "jquery"]},
+		  {img : '/img/03_s.jpg', project : '금융감독원', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2011-01 ~ 2011-03', skill: ["html", "css", "js"]},
+		  {img : '/img/02_s.jpg', project : '조달청', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2010-10 ~ 2010-12', skill: ["html", "css", "js"]},
+		  {img : '/img/01_s.jpg', project : '국립공원관리공단', scription: ["IE6 크로스브라우징", "웹접근성 마크 획득"], date : '2010-06 ~ 2010-09', skill: ["html", "css", "js"]}
 	  ]
     }
   },

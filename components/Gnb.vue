@@ -68,6 +68,7 @@ export default {
   padding: 10px 30px;
   color: #fff;
   font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .gnb-area li a::before {
